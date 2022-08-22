@@ -23,7 +23,7 @@ A *Python* script generates `initialize.sql`, see the `src/` directory.
 
 # MySQL
 
-The intended DBMS for this is *MySQL*.
+The intended DBMS for this schema is *MySQL*.
 
 # Credits
 
