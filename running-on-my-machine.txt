@@ -1,0 +1,67 @@
+mysql> 
+mysql> -- query script for the average grade that is given by each professor
+mysql> select * from average_grades_assigned_by_instructors;
++-----------------------+--------------------+------------+
+| institutions_alt_name | persons_legal_name | percentage |
++-----------------------+--------------------+------------+
+| BU                    | Cassidy Clever     | 100.000000 |
+| BU                    | Cindy Carma        | 100.000000 |
++-----------------------+--------------------+------------+
+2 rows in set (0.01 sec)
+
+mysql> -- query script for the top grades for each student
+mysql> select * from top_grades_for_all_students;
++--------------------+------------+
+| persons_legal_name | percentage |
++--------------------+------------+
+| James Capozzoli    | 100.000000 |
+| Yennifer Yaboozle  | 100.000000 |
+| Adam Appletosh     | 100.000000 |
+| Casey Bro          | 100.000000 |
+| Luis Rico          | 100.000000 |
+| Selina Sikorsky    | 100.000000 |
++--------------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> -- query script to group students by the courses they are enrolled in
+mysql> select * from all_courses_for_all_students;
++----------------------+------------+--------+-------------------+----------+------------+----------+------------------+
+| course               | department | school | students_name     | schedule | start_time | end_time | instructors_name |
++----------------------+------------+--------+-------------------+----------+------------+----------+------------------+
+| Customer Service 1   | HRM        | BU     | James Capozzoli   | -M-W-F-  | 0800       | 0950     | Cindy Carma      |
+| Customer Service 1   | HRM        | BU     | Yennifer Yaboozle | -M-W-F-  | 0800       | 0950     | Cindy Carma      |
+| Customer Service 1   | HRM        | BU     | Adam Appletosh    | -M-W-F-  | 0800       | 0950     | Cindy Carma      |
+| Customer Service 1   | HRM        | BU     | Casey Bro         | -M-W-F-  | 0800       | 0950     | Cindy Carma      |
+| Customer Service 1   | HRM        | BU     | Luis Rico         | -M-W-F-  | 0800       | 0950     | Cindy Carma      |
+| Customer Service 1   | HRM        | BU     | Selina Sikorsky   | -M-W-F-  | 0800       | 0950     | Cindy Carma      |
+| Customer Service 2   | HRM        | BU     | James Capozzoli   | --T-T--  | 0800       | 1045     | Cindy Carma      |
+| Introduction to Java | COMPSCI    | BU     | James Capozzoli   | -M-W-F-  | 1000       | 1150     | Cassidy Clever   |
+| Introduction to Java | COMPSCI    | BU     | Yennifer Yaboozle | -M-W-F-  | 1000       | 1150     | Cassidy Clever   |
+| Introduction to Java | COMPSCI    | BU     | Adam Appletosh    | -M-W-F-  | 1000       | 1150     | Cassidy Clever   |
+| Introduction to Java | COMPSCI    | BU     | Casey Bro         | -M-W-F-  | 1000       | 1150     | Cassidy Clever   |
+| Introduction to Java | COMPSCI    | BU     | Luis Rico         | -M-W-F-  | 1000       | 1150     | Cassidy Clever   |
+| Introduction to Java | COMPSCI    | BU     | Selina Sikorsky   | -M-W-F-  | 1000       | 1150     | Cassidy Clever   |
++----------------------+------------+--------+-------------------+----------+------------+----------+------------------+
+13 rows in set (0.00 sec)
+
+mysql> -- query script to create a summary report of courses and their average grades, sorted by the most challenging course (course with the lowest average grade) to the easiest course
+mysql> select * from courses_average_grades_sorted;
++----------------------+-----------------+
+| courses_title        | average_percent |
++----------------------+-----------------+
+| Customer Service 1   |      100.000000 |
+| Introduction to Java |      100.000000 |
++----------------------+-----------------+
+2 rows in set (0.00 sec)
+
+mysql> -- query script for finding which student and professor have the most courses in common
+mysql> select * from max_unioned_enrollments;
++------------------+-----------------+---------------+
+| instructors_name | students_name   | matches_count |
++------------------+-----------------+---------------+
+| Cindy Carma      | James Capozzoli |             2 |
++------------------+-----------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
