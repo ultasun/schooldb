@@ -1,24 +1,24 @@
 # School DB
-*School DB* is a [*MySQL*](https://www.mysql.com/) database schema which could be used by an educational institution with students from all over the world. Grades, professors, schedules, class sections, and nearly anything else the author was able to think of at the time, ought to be covered by this schema.
+*School DB* is a [*MySQL*](https://www.mysql.com/) database schema which could be used by a [higher educational institution](https://en.wikipedia.org/wiki/Educational_institution#Further_and_higher_education) with students from all over the world. Grades, professors, schedules, class sections, and nearly anything else required by such an institution, ought to be covered by this schema.
 
-## Evolution
+### Evolution
 If you find a missing *business* *concept*, open an issue! This is the most complicated *SQL* schema the author has written to date.  Improving this schema to cover an overlooked use case could be a constructive hobby -- but please do not open the issue if it would cause this system to deviate away from the *business needs* of an educational institution.
 
-## Homework
+### Homework
 This was a homework assignment completed during the *Bottega Full Stack Development* certificate. View the [`running-on-my-machine.txt`](https://github.com/ultasun/schooldb/blob/master/running-on-my-machine.txt) file, and the `bottega-tasks/` directory, for a demonstration.  
 
 This submission achieved a perfect score, on the basis that, all five `bottega-tasks/` returned the correct records.
 
 The author decided to challenge themselves by designing the database to be as elaborate as possible.  This was not an assignment criteria.
 
-## Python
+### Python
 A *Python* script generates `initialize.sql`, see the `src/` directory.
 
-## MySQL
+### MySQL
 The intended [*DBMS*](https://en.wikipedia.org/wiki/Database#Database_management_system) for this schema is *MySQL*.
 
 # Installation
-## Dependencies 
+### Dependencies 
 *Python 3*, *BASH*, and *MySQL* are required to follow the *Installation Procedure*.
 
 The procedure may be completed on *Windows* without *BASH* -- the *BASH* scripts are not complicated, and may easily be adapted to work in a *Windows* environment.
