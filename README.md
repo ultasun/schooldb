@@ -17,6 +17,9 @@ A *Python* script generates `initialize.sql`, see the `src/` directory.
 ### MySQL
 The intended [*DBMS*](https://en.wikipedia.org/wiki/Database#Database_management_system) for this schema is *MySQL*.
 
+### Style
+Try to keep each line within `src/core.sql` to be less than 80 columns wide. 
+
 # Installation
 ### Dependencies 
 *Python 3*, *BASH*, and *MySQL* are required to follow the *Installation Procedure*.
