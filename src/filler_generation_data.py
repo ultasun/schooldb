@@ -85,7 +85,8 @@ student_logins_template = [
     (get_students_id('Selina Sikorsky', 'BU'), get_institutions_id('BU'), 'sss01234@huskies', 'true')
 ]
 employee_logins_template = [
-    (get_employees_id('Mike Mol', 'BU'), get_institutions_id('BU'), 'mikemol@somewhe.re', 'false')
+    (get_employees_id('Mike Mol', 'BU'), get_institutions_id('BU'), 'mikemol@somewhe.re', 'false'),
+    (get_employees_id('Diana Deerbourne', 'BU'), get_institutions_id('BU'), 'dianez@somewhe.re', 'false')
 ]
 departments_template = [
     ('HRM', get_institutions_id('BU'), get_instructors_id('Cindy Carma', 'BU'), 'false'),

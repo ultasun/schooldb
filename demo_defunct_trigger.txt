@@ -46,4 +46,12 @@ mysql> SELECT persons.persons_legal_name AS 'Deceased Employees' FROM employees,
 +--------------------+
 1 row in set (0.00 sec)
 
-mysql>
+mysql> SELECT `employee-logins_string` AS 'Deactivated Employee Logins' FROM `employee-
++-----------------------------+
+| Deactivated Employee Logins |
++-----------------------------+
+| dianez@somewhe.re           |
++-----------------------------+
+1 row in set (0.00 sec)
+
+mysql> 

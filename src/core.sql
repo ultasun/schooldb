@@ -469,6 +469,24 @@ UPDATE employees, persons SET employees.employees_is_defunct = TRUE
 WHERE employees.employees_persons_id_fk = persons.persons_id
 AND persons.persons_is_defunct = TRUE;
 
+UPDATE `student-logins`, students, persons
+SET `student-logins`.`student-logins_is_defunct` = TRUE
+WHERE `student-logins_students_id_fk` = students.students_id
+AND students.students_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+UPDATE `instructor-logins`, instructors, persons
+SET `instructor-logins`.`instructor-logins_is_defunct` = TRUE
+WHERE `instructor-logins_instructors_id` = instructors.instructors_id
+AND instructors.instructors_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+UPDATE `employee-logins`, employees, persons
+SET `employee-logins`.`employee-logins_is_defunct` = TRUE
+WHERE `employee-logins_employees_id_fk` = employees.employees_id
+AND employees.employees_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
 END;$$
 
 DELIMITER ;

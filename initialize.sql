@@ -469,6 +469,24 @@ UPDATE employees, persons SET employees.employees_is_defunct = TRUE
 WHERE employees.employees_persons_id_fk = persons.persons_id
 AND persons.persons_is_defunct = TRUE;
 
+UPDATE `student-logins`, students, persons
+SET `student-logins`.`student-logins_is_defunct` = TRUE
+WHERE `student-logins_students_id_fk` = students.students_id
+AND students.students_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+UPDATE `instructor-logins`, instructors, persons
+SET `instructor-logins`.`instructor-logins_is_defunct` = TRUE
+WHERE `instructor-logins_instructors_id` = instructors.instructors_id
+AND instructors.instructors_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+UPDATE `employee-logins`, employees, persons
+SET `employee-logins`.`employee-logins_is_defunct` = TRUE
+WHERE `employee-logins_employees_id_fk` = employees.employees_id
+AND employees.employees_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
 END;$$
 
 DELIMITER ;
@@ -699,6 +717,7 @@ INSERT INTO `student-logins` (`student-logins_students_id_fk`, `student-logins_i
 INSERT INTO `student-logins` (`student-logins_students_id_fk`, `student-logins_institutions_id_fk`, `student-logins_string`, `student-logins_is_defunct`) VALUES ((SELECT students_id FROM students WHERE students_persons_id_fk = (SELECT persons_id FROM persons WHERE persons_legal_name = 'Selina Sikorsky' LIMIT 1) AND students_institutions_id_fk = (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1) LIMIT 1), (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1), 'sss01234@huskies', true);
 
 INSERT INTO `employee-logins` (`employee-logins_employees_id_fk`, `employee-logins_institutions_id_fk`, `employee-logins_string`, `employee-logins_is_defunct`) VALUES ((SELECT employees_id FROM employees WHERE employees_persons_id_fk = (SELECT persons_id FROM persons WHERE persons_legal_name = 'Mike Mol' LIMIT 1) AND employees_institutions_id_fk = (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1) LIMIT 1), (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1), 'mikemol@somewhe.re', false);
+INSERT INTO `employee-logins` (`employee-logins_employees_id_fk`, `employee-logins_institutions_id_fk`, `employee-logins_string`, `employee-logins_is_defunct`) VALUES ((SELECT employees_id FROM employees WHERE employees_persons_id_fk = (SELECT persons_id FROM persons WHERE persons_legal_name = 'Diana Deerbourne' LIMIT 1) AND employees_institutions_id_fk = (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1) LIMIT 1), (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1), 'dianez@somewhe.re', false);
 
 INSERT INTO departments (`depts_title`, `depts_institutions_id_fk`, `depts_chairperson_instructors_fk`, `depts_is_defunct`) VALUES ('HRM', (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1), (SELECT instructors_id FROM instructors WHERE instructors_persons_id_fk = (SELECT persons_id FROM persons WHERE persons_legal_name = 'Cindy Carma' LIMIT 1) AND instructors_institutions_id_fk = (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1) LIMIT 1), false);
 INSERT INTO departments (`depts_title`, `depts_institutions_id_fk`, `depts_chairperson_instructors_fk`, `depts_is_defunct`) VALUES ('COMPSCI', (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1), (SELECT instructors_id FROM instructors WHERE instructors_persons_id_fk = (SELECT persons_id FROM persons WHERE persons_legal_name = 'Cassidy Clever' LIMIT 1) AND instructors_institutions_id_fk = (SELECT institutions_id FROM institutions WHERE institutions_alt_name = 'BU' LIMIT 1) LIMIT 1), false);
