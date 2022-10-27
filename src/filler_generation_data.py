@@ -1,3 +1,5 @@
+from filler_generation_code import *
+
 nations_template = [
     ('United States', 'US'),
     ('Mexico', 'MX'),
@@ -65,7 +67,8 @@ instructors_template = [
     (get_persons_id('Amy Ante'), get_institutions_id('BU'), 'false')
 ]
 employees_template = [
-    (get_persons_id('Mike Mol'), get_institutions_id('BU'), 'false')
+    (get_persons_id('Mike Mol'), get_institutions_id('BU'), 'false'),
+    (get_persons_id('Diana Deerbourne'), get_institutions_id('BU'), 'false')
 ]
 instructor_logins_template = [
     (get_instructors_id('Cindy Carma', 'BU'), get_institutions_id('BU'), 'ccarma@bu.notreal', 'false'),
