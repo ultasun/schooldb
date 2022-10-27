@@ -447,6 +447,34 @@ CREATE TABLE `services` (
 
 -- ***** end table creation
 -- ****************************
+-- ***** begin trigger creation
+
+-- if a person is marked as defunct, then all their roles should be, too.
+
+DELIMITER $$
+
+CREATE TRIGGER defunct_person_defuncts_all_roles AFTER UPDATE ON persons
+FOR EACH ROW
+BEGIN
+
+UPDATE students, persons SET students.students_is_defunct = TRUE
+WHERE students.students_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+UPDATE instructors, persons SET instructors.instructors_is_defunct = TRUE
+WHERE instructors.instructors_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+UPDATE employees, persons SET employees.employees_is_defunct = TRUE
+WHERE employees.employees_persons_id_fk = persons.persons_id
+AND persons.persons_is_defunct = TRUE;
+
+END;$$
+
+DELIMITER ;
+
+-- ***** end trigger creation
+-- ****************************
 -- ***** begin view creation
 
 CREATE VIEW students_legal_names AS
