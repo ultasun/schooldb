@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ../src
-(cat core.sql && python filler-generation.py) > ../initialize.sql
+(cat core.sql && python3 filler_generation.py) > ../initialize.sql
 cd ../scripts
